@@ -79,12 +79,8 @@ const search = () => {
 //    // Loop through all list items, and hide those who don't match the user input
     for (let i = 0; i < studentDiv.length; i++) {
 		const studentName = studentDetail[i].innerHTML.toUpperCase();
-        if (formattedName === formattedInput) {
-            studentDiv[i].style.display = "";
-        } else {
+        if (studentName !== input) {
             studentDiv[i].style.display = "none";
         }
-    }
+	}
 };
-
-
