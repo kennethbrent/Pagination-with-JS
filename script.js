@@ -68,23 +68,21 @@ $(".student-search").append("<button class='searchButton'>Search</button>");
 
 const search = () => {
 	  
-  	const input = document.getElementById('searchInput');
-    const formattedInput = input.value.toUpperCase();
+  	const input = document.getElementById('searchInput').value.toUpperCase();
 	const studentDetail = document.getElementsByTagName('h3');
+	const studentDiv = document.getElementsByClassName('student-item');
+
 	
 
 
 
 //    // Loop through all list items, and hide those who don't match the user input
-    for (let i = 0; i < studentDetail.length; i++) {
-		
-		const studentName = studentDetail[i].innerHTML;
-		const formattedName = studentName.toUpperCase();
-		
+    for (let i = 0; i < studentDiv.length; i++) {
+		const studentName = studentDetail[i].innerHTML.toUpperCase();
         if (formattedName === formattedInput) {
-            studentDetail[i].style.display = "";
+            studentDiv[i].style.display = "";
         } else {
-            studentDetail[i].style.display = "none";
+            studentDiv[i].style.display = "none";
         }
     }
 };
