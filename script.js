@@ -32,7 +32,7 @@ const appendPageLinks = () => {
 };
 
 
-///Function to show the current page and which students to show and hide
+///Function to determine which page/students to show and which students to hide
 const showPage = () => {
 	
 	hideStudents();
@@ -61,26 +61,3 @@ const showPage = () => {
 appendPageLinks();
 showPage();
 
-$(".page-header").append("<div class='student-search'>");
-$(".student-search").append("<input type='text' id='searchInput' onkeyup='search()' placeholder='Search for students'>");
-$(".student-search").append("<button class='searchButton'>Search</button>");
-
-
-const search = () => {
-	  
-  	const input = document.getElementById('searchInput').value.toUpperCase();
-	const studentDetail = document.getElementsByTagName('h3');
-	const studentDiv = document.getElementsByClassName('student-item');
-
-	
-
-
-
-//    // Loop through all list items, and hide those who don't match the user input
-    for (let i = 0; i < studentDiv.length; i++) {
-		const studentName = studentDetail[i].innerHTML.toUpperCase();
-        if (studentName !== input) {
-            studentDiv[i].style.display = "none";
-        }
-	}
-};
